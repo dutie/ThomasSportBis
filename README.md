@@ -17,7 +17,6 @@ Volgende tools hoef je maar eenmalig te installeren:
 
 - Clone deze repo `git clone https://github.com/pverhaert/1ITF_Sass_BS4_project.git <project naam>`
 - Open een nieuw terminalvenster in de map **project naam** en installeer de node-modules: `npm install`
-- Kopieer de **jQuery.min.js** en **bootstrap.bundle.min.js** naar de map **public_html/js**: `gulp js`
 - Start de Sass-compiler: `gulp`
 
 ## CSS-bestand optimaliseren voor productie!
