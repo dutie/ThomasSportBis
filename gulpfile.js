@@ -5,6 +5,8 @@ var sass = require('gulp-sass');
 var prefix = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 var cssnano = require('gulp-cssnano');
+var postcss = require('gulp-postcss');
+var mqpacker = require('css-mqpacker');
 var browserSync = require('browser-sync').create();
 
 gulp.task('browser-sync', function () {
@@ -34,12 +36,16 @@ gulp.task('js', function () {
 
 // Compile sass into CSS (/public_html/css/) & auto-inject into browsers
 gulp.task('sass', function () {
+    var processors = [
+        mqpacker({})
+    ];
     return gulp.src('./scss/**/*.scss')
         .pipe(plumber())
         .pipe(sourcemaps.init())
         // outputStyle: nested (default), expanded, compact, compressed
         .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
         .pipe(prefix("last 2 versions"))
+        .pipe(postcss(processors))
         .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest('./public_html/css'))
         .pipe(browserSync.stream());
