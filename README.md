@@ -19,21 +19,6 @@ Volgende tools hoef je maar eenmalig te installeren:
 - Open een nieuw terminalvenster in de map **project naam** en installeer de node-modules: `npm install`
 - Start de Sass-compiler: `gulp`
 
-## CSS-bestand optimaliseren voor productie!
-
- Het CSS-bestand in dit project zijn nog niet geoptimaliseerd voor productie. 
- De code is immers nog geëxpandeerd en bevat een source-map om vlot te debuggen.
- 
-Om de bestanden sneller te laden moet je zeker de gegenereerde CSS-code minimaliseren. Dit doe je als volgt:
-
-- Stop de default gulp-task: `Ctrl + c`
-- Minimaliseer de CSS-code: `gulp build`
-- Upload de CSS-bestanden naar de webserver
-- Start de default gulp-task: `gulp`
-
-Het originele CSS-bestand van **600 kB** is na optimalisatie nog naar **120 kB** groot!!!
-
-
 ## Stappenplan voor een nieuwe team website op basis van dit project
 
 Werk je met twee of meer teamleden aan hetzelfde project, dan volg je best deze werkwijze. Begin alvast met een teamleader 🎓 aan te duiden en een naam voor het project te kiezen.
@@ -91,6 +76,22 @@ Wacht dus niet te lang met wijzigingen op GitHub te plaatsen.
 3. Verplaats de bestanden van de staging area naar de lokale repo `git commit -m "Comment"`
 4. Synchroniseer met de remote repo `git pull --rebase`
 5. Push de lokale repo naar de remote repo `git push`
+
+
+## Website uploaden naar sinners
+
+ Het CSS-bestand in dit project zijn nog niet geoptimaliseerd voor productie. 
+ De code is immers nog geëxpandeerd en bevat een source-map om vlot te debuggen.
+ 
+Om de bestanden sneller te laden moet je zeker de gegenereerde CSS-code minimaliseren. Dit doe je als volgt:
+
+- Open **gulpfile.js** en configureer de **ftp-task**
+- `var projectFolder = '/public_html/bs4'`: de map waar je de website gaat uploaden. Bijvoorbeeld:   
+`/public_html`: de website is bereikbaar via de URL: http://gebruikersnaam.sinners.be/   
+`/public_html/bs4`: de website is bereikbaar via de URL: http://gebruikersnaam.sinners.be/bs4
+- `user: 'username'`: vervang `username` door je sinners gebruikersnaam
+- `password: 'passwoord'`: vervang `passwoord` door je sinners wachtwoord
+- Upload de gewijzigde bestanden naar de webserver met de gulp-task: `gulp deploy`
 
 
 

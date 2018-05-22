@@ -8,6 +8,8 @@ var sourcemaps = require('gulp-sourcemaps');
 var cssnano = require('gulp-cssnano');
 var postcss = require('gulp-postcss');
 var mqpacker = require('css-mqpacker');
+var log = require('fancy-log');
+var ftp = require('vinyl-ftp');
 var browserSync = require('browser-sync').create();
 
 gulp.task('browser-sync', function () {
@@ -58,5 +60,22 @@ gulp.task('watch', function () {
     gulp.watch('**/*.{html,js,php}', {cwd: './public_html/'}, browserSync.reload);
 });
 
+gulp.task('ftp', ['cssnano'], function () {
+    var projectFolder = '/public_html/bs4';     //project folder
+    var conn = ftp.create({
+        host: 'sinners.be',         // FTP host
+        user: 'username',           // FTP username
+        password: 'passwoord',      // FTP password
+        parallel: 10,
+        log: log.info()
+    });
+    var globs = [
+        'public_html/**'
+    ];
+    return gulp.src(globs, {base: './public_html', buffer: false})
+        .pipe(conn.newer(projectFolder)) // only upload newer files
+        .pipe(conn.dest(projectFolder));
+});
+
 gulp.task('default', ['js', 'sass', 'watch', 'browser-sync']);
-gulp.task('build', ['cssnano']);
+gulp.task('deploy', ['cssnano', 'ftp']);
