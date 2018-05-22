@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var plumber = require('gulp-plumber');
+var notify = require('gulp-notify');
 var newer = require('gulp-newer');
 var sass = require('gulp-sass');
 var prefix = require('gulp-autoprefixer');
@@ -31,6 +32,7 @@ gulp.task('cssnano', function () {
 gulp.task('js', function () {
     return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', 'node_modules/jquery/dist/jquery.min.js'])
         .pipe(newer('./public_html/js'))
+        .pipe(notify({message: 'Copy JS files'}))
         .pipe(gulp.dest('./public_html/js'));
 });
 
@@ -40,10 +42,10 @@ gulp.task('sass', function () {
         mqpacker({})
     ];
     return gulp.src('./scss/**/*.scss')
-        .pipe(plumber())
+        .pipe(plumber({errorHandler: notify.onError("<%= error.message %>")}))
         .pipe(sourcemaps.init())
         // outputStyle: nested (default), expanded, compact, compressed
-        .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+        .pipe(sass({outputStyle: 'expanded'}))
         .pipe(prefix("last 2 versions"))
         .pipe(postcss(processors))
         .pipe(sourcemaps.write('./maps'))
