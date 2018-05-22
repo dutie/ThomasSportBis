@@ -83,7 +83,8 @@ Wacht dus niet te lang met wijzigingen op GitHub te plaatsen.
  Het CSS-bestand in dit project zijn nog niet geoptimaliseerd voor productie. 
  De code is immers nog geëxpandeerd en bevat een source-map om vlot te debuggen.
  
-Om de bestanden sneller te laden moet je zeker de gegenereerde CSS-code minimaliseren. Dit doe je als volgt:
+De gulp-tast `gulp deploy` zal alle CSS-bestanden optimaliseren en de map `public_html` automatisch uploaden naar de webserver.   
+Je hoeft enkel nog eenmalig je FTP gegevens aan te passen in het gulp-bestand.
 
 - Open **gulpfile.js** en configureer de **ftp-task**
 - `var projectFolder = '/public_html/bs4'`: de map waar je de website gaat uploaden. Bijvoorbeeld:   
