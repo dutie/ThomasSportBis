@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2100" height="1500" viewBox="0 0 2100 1500">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+        stroke: #009cab;
+      }
+
+      .cls-1 {
+        stroke-width: 50px;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-width: 12.5px;
+      }
+
+      .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-4, .cls-6 {
+        font-size: 300px;
+      }
+
+      .cls-4, .cls-7 {
+        fill: #f04c25;
+      }
+
+      .cls-4, .cls-5, .cls-6, .cls-7 {
+        text-anchor: middle;
+        font-family: "Franklin Gothic Heavy";
+      }
+
+      .cls-5, .cls-7 {
+        font-size: 100px;
+      }
+
+      .cls-5, .cls-6 {
+        fill: #009cab;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="1050.5" cy="688.5" r="426.5"/>
+  <path class="cls-2" d="M795,530h21V865H795V530Zm0,0h21V865H795V530Zm0,0h21V865H795V530Z"/>
+  <rect id="Rounded_Rectangle_1" data-name="Rounded Rectangle 1" class="cls-3" x="814" y="563" width="460" height="107" rx="10" ry="10"/>
+  <text id="S" class="cls-4" x="952.421" y="544.75"><tspan x="952.421">S</tspan></text>
+  <text id="port" class="cls-5" x="1135.199" y="528.882"><tspan x="1135.199">port</tspan></text>
+  <path class="cls-2" d="M1274,521h21V856h-21V521Zm0,0h21V856h-21V521Zm0,0h21V856h-21V521Z"/>
+  <text id="T" class="cls-6" x="974.558" y="939.64"><tspan x="974.558">T</tspan></text>
+  <text id="homas" class="cls-7" x="1172.273" y="940.095"><tspan x="1172.273">homas</tspan></text>
+</svg>
