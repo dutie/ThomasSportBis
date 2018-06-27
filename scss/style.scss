@@ -1,8 +1,42 @@
 // Override Bs4 variables and custom mixins
 $theme-colors: (
-        'primary': #009CAB,
+        'primary': #6C757D,
         'danger': #F04C25
 );
+
+@media (max-width: 500px) {
+  #navTitel{
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 501px){
+  #navTitel{
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 700px){
+  #navTitel{
+    font-size: 82px;
+  }
+}
+
+
+footer{
+  background-color: darken(#6C757D,15%);
+}
+
+#schoolLink{
+  color: white;
+
+  &:hover{
+    color:lighten(#6C757D,15%);
+    text-decoration: none;
+  }
+}
+
+
 
 // Link to BS4
 @import "../node_modules/bootstrap/scss/bootstrap";

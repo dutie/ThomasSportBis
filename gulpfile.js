@@ -1,3 +1,4 @@
+var projectFolder = '/public_html/bs4';
 var gulp = require('gulp');
 var plumber = require('gulp-plumber');
 var notify = require('gulp-notify');
@@ -64,8 +65,8 @@ gulp.task('ftp', ['cssnano'], function () {
     var projectFolder = '/public_html/bs4';     //project folder
     var conn = ftp.create({
         host: 'sinners.be',         // FTP host
-        user: 'username',           // FTP username
-        password: 'passwoord',      // FTP password
+        user: 'r0695565',           // FTP username
+        password: 'Baksteen123',      // FTP password
         parallel: 10,
         log: log.info()
     });
