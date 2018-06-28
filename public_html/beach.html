@@ -1,26 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="icon" href="../Foto/logo/Untitled-1.png" type="image/x-icon"/>
-        <title>Thomas Sport</title>
-    </head>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="../Foto/logo/Untitled-1.png" type="image/png"/>
+    <title>Thomas Sport</title>
+</head>
+<body>
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" id="navTitel" href="index.html"><img width="100" height="100" src="../Foto/logo/Untitled-1.png" alt="logo Thomas Sport" >Thomas Sport</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavBeach" aria-controls="navbarNavBeach" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a class="navbar-brand" id="navTitel" href="index.html"><img width="100" height="100"
+                                                                 src="../Foto/logo/Untitled-1.png"
+                                                                 alt="logo Thomas Sport">Thomas Sport</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarBeach">
+
+    <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-            <li class="nav-item ">
-                <a class="nav-link" href="index.html">Home</a>
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">beach <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">beach </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="calisthenics.html">calisthenics</a>
@@ -32,6 +38,103 @@
     </div>
 </nav>
 
+<div class="container">
+    <header>
+        <h1>B
+            <small class="text-muted">eachvolleyba</small>
+            L
+        </h1>
+        <hr class="mb-4">
+    </header>
+    <div class="row">
+        <div class="col-sm-12 col-lg-4 col-md-6">
+            <div>
+                <figure>
+                    <img src="Foto/BGBeachvolleyBall.jpg" width="100%" alt="achtergrond beachvolleybalveld"/>
+                    <figcaption>beachvolleybalveld</figcaption>
+                </figure>
+            </div>
+            <p>Beachvolleybal wordt gespeeld op een ondergrond van zand, vaak op het strand. Voor grote internationale
+                en nationale toernooien wordt vaak een tijdelijk beachvolleybalstadion gebouwd op bijvoorbeeld een plein
+                in een stad.
+            </p>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-8">
+            <h1>spelregels</h1>
+            <hr class="mb-4">
+            <div class="row">
+                <ul class="col-sm-12 col-lg-5 alert-success">
+                    <h3>Beachvolleybal</h3>
+                    <li>Er zijn geen vaste posities voor spelers in het veld</li>
+                    <li> De bal is zwaarder en zachter.</li>
+                    <li>Het veld meet 8 bij 16 meter.</li>
+                    <li> Er is geen middenlijn; er kan dus ook geen lijnfout worden gemaakt door het overschrijden van
+                        deze lijn, al mag de tegenstander niet gehinderd worden.
+                    </li>
+                    <li>Belijning wordt gemaakt door het spannen van linten; een bal is 'in' als de bal de lijn raakt.
+                    </li>
+                </ul>
+
+                <ul class="col-sm-12 col-lg-5 alert-danger">
+                    <h3>Zaalvolleybal</h3>
+                    <li>Er zijn vaste posities voor alle spelers in het veld</li>
+                    <li> De bal kan hard aankomenen wegens het harde omhulsel.</li>
+                    <li>Het veld is groter dan bij <span class="font-italic">beachvolleybalveld</span>; 9 bij 18 meter.
+                    </li>
+                    <li>Over of op de getapte of geverfde lijn is buiten.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6 m-auto">
+
+            <button type="button" class="btn btn-block" data-toggle="modal" id="btnModal"
+                    data-target="#imagebeachVolleybalThomasMore"> Eindresultaat
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="imagebeachVolleybalThomasMore">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="beachVolleybalThomasMore">Eindresultaat van het beachvolleybalveld</h5>
+            </div>
+
+            <img src="Foto/VolleybalEindResultaat.jpg" class="img-fluid"/></div>
+            <div>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">X</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-4 mt-4 pb-0 mb-0">
+
+    <div class="container-fluid text-center text-md-left">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 text-center">
+                <h5 class="text-uppercase">Examen opdracht</h5>
+                <p>&copy Mats Fockaert</p>
+            </div>
+
+            <div class="col-sm-12 col-md-6 text-center">
+                <a href="https://www.thomasmore.be" id="schoolLink">Thomas More</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<!--custom scripts-->
+<script>
+
+</script>
 
 </body>
 </html>

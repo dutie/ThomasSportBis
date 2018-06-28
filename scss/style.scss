@@ -1,42 +1,111 @@
 // Override Bs4 variables and custom mixins
-$theme-colors: (
-        'primary': #6C757D,
-        'danger': #F04C25
-);
 
+$containerKleur: invert(darken(#6C757D, 25%));
+$h1Kleur: lighten(black, 25%);
+$footerKleur: darken(invert(black), 33%);
+$blauw: lighten(blue, 22%);
+
+//small screen
 @media (max-width: 500px) {
-  #navTitel{
+  #navTitel {
     font-size: 24px;
   }
 }
 
-@media (min-width: 501px){
-  #navTitel{
+//medium screen
+@media (min-width: 501px) {
+  #navTitel {
     font-size: 60px;
   }
 }
 
-@media (min-width: 700px){
-  #navTitel{
+//big screen
+@media (min-width: 700px) {
+  #navTitel {
     font-size: 82px;
   }
 }
 
-
-footer{
-  background-color: darken(#6C757D,15%);
-}
-
-#schoolLink{
-  color: white;
-
-  &:hover{
-    color:lighten(#6C757D,15%);
-    text-decoration: none;
+#btnModal {
+  color: black;
+  &:hover {
+    color: $blauw;
+  }
+  &:active {
+    color: invert($blauw);
   }
 }
 
+.alert-danger, .alert-success {
+  padding: 12px;
+  margin: auto;
+  margin: 10px;
+}
 
+//klasse om iets te verbergen
+.hide {
+  display: none;
+}
+
+//klasse om iets weer te geven
+.show {
+  display: block;
+}
+
+//keyframes to animate from left to right
+@keyframes leftToRight {
+  0% {
+    left: -1500px;
+  }
+  97% {
+    left: 10px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
+//add the animation
+.leftToRight {
+  position: relative;
+  animation-name: leftToRight;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+//kleuren geven
+body {
+  h1 {
+    color: $h1Kleur;
+  }
+  footer {
+    h5 {
+      color: $footerKleur;
+    }
+  }
+}
+
+//divide in columns
+.kolom {
+  columns: 100px 3;
+  column-gap: 50px;
+  column-rule: 5px dotted $containerKleur;
+}
+
+//footer
+footer {
+  background-color: darken(#6C757D, 15%);
+}
+
+//change link from Thomas More
+#schoolLink {
+  color: white;
+
+  &:hover {
+    color: lighten(#6C757D, 15%);
+    text-decoration: none;
+  }
+}
 
 // Link to BS4
 @import "../node_modules/bootstrap/scss/bootstrap";

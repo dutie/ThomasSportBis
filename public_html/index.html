@@ -9,13 +9,16 @@
     <title>Thomas Sport</title>
 </head>
 <body>
-
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" id="navTitel" href="#"><img width="100" height="100" src="../Foto/logo/Untitled-1.png" alt="logo Thomas Sport" >Thomas Sport</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a class="navbar-brand" id="navTitel" href="#"><img width="100" height="100" src="../Foto/logo/Untitled-1.png"
+                                                        alt="logo Thomas Sport">Thomas Sport</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item active">
@@ -34,52 +37,58 @@
     </div>
 </nav>
 
-<div class="container">
-    <header>
-        <h1>Sass - Bootstrap 4
-            <small class="text-muted">project 1ITF</small>
-        </h1>
-        <hr class="mb-4">
-    </header>
+<!-- intro -->
+<div class="container leftToRight">
     <div class="row">
-        <div class="col-lg-4 col-md-6">
-            <p>Lorem ipsum dolor sit ame
-            r adipisicing elit. Adipisci alias, aliquid corporis deserunt eos
-                exercitationem explicabo id molestiae nemo perspiciatis quasi ut vero voluptatibus?
-                Ducimus enim
-                expedita
-                reprehenderit sit veritatis.
-            </p>
-        </div>
-        <div class="col-lg-4 col-md-6">
-            <div class="alert alert-primary">
-                This is a primary alert
-                <button type="button" class="close" data-dismiss="alert">
-                    <span>&times;</span>
-                </button>
-            </div>
-            <div class="alert alert-danger">
-                This is a danger alert
-                <button type="button" class="close" data-dismiss="alert">
-                    <span>&times;</span>
-                </button>
-            </div>
-            <div class="alert alert-success">
-                This is a success alert
-                <button type="button" class="close" data-dismiss="alert">
-                    <span>&times;</span>
-                </button>
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <header>
+                <h1 class="text-center">Welkom <span class="text-muted">!!!</span>
+                </h1>
+                <hr class="mb-4">
+            </header>
+
+            <div class="pl-2 pr-2 text-center">
+                <div>
+                    <p>Bewonder de evolutie van het nieuwe "recreatie park" van Thomas More Geel!</p>
+                </div>
+                <br>
+                <div>
+                    <img src="Foto/LayOutVolleybalveld.jpg" width="100%"/>
+                </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6">
-            <button type="button" class="btn btn-primary btn-block" data-toggle="tooltip" data-placement="top"
-                    title="Tooltip on top"><i class="fas fa-home"></i> Home
-            </button>
-            <button type="button" class="btn btn-danger btn-block"><i class="fas fa-users"></i> Users</button>
-            <button type="button" class="btn btn-outline-success btn-block" data-toggle="modal"
-                    data-target="#imageModal"><i
-                    class="fas fa-image"></i> Image modal
-            </button>
+        <div class="col-sm-12 col-md-6 col-lg-4 beginVerborgen" id="info">
+            <header>
+                <h1 class="text-center">Info
+                </h1>
+                <hr class="mb-4">
+            </header>
+
+            <div class="kolom pl-2 pr-2 text-center">
+                <div>
+                    <p>Thomas Sport is een project dat ontworpen en gebouwd wordt door een team van 7 tweedejaars
+                        bouwkunde
+                        studenten Thomas More Geel.</p>
+                </div>
+                <br>
+
+                <div>
+                    <p>Het project bestaat uit het realiseren van een buitensportterrein. Op het terrein zullen: 2
+                        beachvolleybalvelden <i class="fas fa-volleyball-ball"></i>, 3 petanquevelden <i
+                                class="fas fa-baseball-ball"></i>, buitenfitness, tribune en kiosk komen.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-4 justify-content-center beginVerborgen" id="eindresultaat">
+            <header>
+                <h1 class="text-center">Eindresultaat</span>
+                </h1>
+                <hr class="mb-4">
+            </header>
+            <div>
+                <img src="Foto/LayOutEindResultaat.jpg" width="100%"/>
+            </div>
         </div>
     </div>
 </div>
@@ -122,5 +131,17 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 <!--custom scripts-->
+<script>
+ $(document).ready(function () {
+     $('.beginVerborgen').addClass('hide');
+     setTimeout(function () {
+         $('#info').addClass('show');
+
+     }, 3500)
+     setTimeout(function () {
+         $('#eindresultaat').addClass('show').addClass('leftToRight');
+     }, 4000)
+ })
+</script>
 </body>
 </html>
