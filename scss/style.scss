@@ -4,18 +4,47 @@ $containerKleur: invert(darken(#6C757D, 25%));
 $h1Kleur: lighten(black, 25%);
 $footerKleur: darken(invert(black), 33%);
 $blauw: lighten(blue, 22%);
+$groen: lighten(green, 5%);
+$rood: lighten(red, 15%);
 
 //small screen
 @media (max-width: 500px) {
   #navTitel {
     font-size: 24px;
   }
+
+  .navbar-brand {
+    position: absolute;
+    left: 50%;
+    margin-left: -50px !important; /* 50% of your logo width */
+    display: block;
+  }
+
+  .hideSmall {
+    display: none;
+  }
 }
 
 //medium screen
 @media (min-width: 501px) {
   #navTitel {
-    font-size: 60px;
+    font-size: 55px;
+  }
+
+  .sliding {
+    width: 100%;
+    height: inherit;
+  }
+  .first {
+    background-color: rgba($blauw, .7);
+  }
+
+  .second {
+    background-color: rgba($groen, .7);
+  }
+
+  .third {
+    background-color: rgba($rood, .7);
   }
 }
 
@@ -36,7 +65,28 @@ $blauw: lighten(blue, 22%);
   }
 }
 
-.alert-danger, .alert-success {
+//text on image
+.bgOpacity {
+  position: relative;
+
+}
+
+.textOnImage {
+  position: absolute;
+  top: 52%;
+  font-weight: bold;
+  background-color: rgba(white, .6);
+  margin-left: 5px;
+  margin-right: 20px;
+  &:hover {
+    background-color: rgba(white, 0);
+    color: rgba(white, 0);
+  }
+
+}
+
+//fout and goed padding and margin
+.fout, .goed {
   padding: 12px;
   margin: auto;
   margin: 10px;
@@ -52,6 +102,24 @@ $blauw: lighten(blue, 22%);
   display: block;
 }
 
+//keyframes
+
+//keyframes to make title go from left to right
+@keyframes titelBewegen {
+  0% {
+    left: 0%;
+  }
+  25% {
+    left: -50%;
+  }
+  75% {
+    left: 50%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
 //keyframes to animate from left to right
 @keyframes leftToRight {
   0% {
@@ -65,12 +133,89 @@ $blauw: lighten(blue, 22%);
   }
 }
 
+//keyframes to animate a volleyball
+@keyframes volleyball {
+  0% {
+    transform: translateX(-200px) translateY(-20px) scale(1);
+  }
+  5% {
+    transform: translateY(-20px) translateX(-100px);
+  }
+  6% {
+    transform: translateY(-50px) translateX(-50px);
+  }
+  7% {
+    transform: translateY(-80px) translateX(-0px);
+  }
+  8% {
+    transform: translateY(-110px) translateX(50px) scale(0.9);
+  }
+  9% {
+    transform: translateY(-140px) translateX(100px) scale(0.8);
+  }
+  10% {
+    transform: translateY(-170px) translateX(150px) scale(0.7);
+  }
+  11% {
+    transform: translateY(-200px) translateX(175px) scale(0.6);
+  }
+  17% {
+    transform: translateY(-260px) translateX(200px) scale(0.5);
+  }
+  19% {
+    transform: scale(0.0);
+  }
+
+  100% {
+    transform: translateX(4000px) translateY(-4000px);
+
+  }
+
+}
+
 //add the animation
 .leftToRight {
   position: relative;
   animation-name: leftToRight;
   animation-duration: 3s;
   animation-fill-mode: forwards;
+}
+
+.weetjes {
+  text-align: center;
+  position: relative;
+  animation-name: titelBewegen;
+  animation-delay: 1.2s;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 2;
+}
+
+.volleyball {
+  animation-name: volleyball;
+  animation-delay: 1.4s;
+  animation-duration: 4s;
+  animation-play-state: running;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+//hidden objects
+.hidden {
+  display: none;
+}
+
+//volleyball shape
+
+.volleyball {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 3px dashed brown;
+  background-color: darken($blauw, 8%);
+  transform: scale(0);
+
 }
 
 //kleuren geven
@@ -105,6 +250,16 @@ footer {
     color: lighten(#6C757D, 15%);
     text-decoration: none;
   }
+}
+
+.fout {
+  color: $rood;
+  list-style-type: symbols(cyclic "-");
+}
+
+.goed {
+  color: $groen;
+  list-style-type: symbols(cyclic "+");
 }
 
 // Link to BS4

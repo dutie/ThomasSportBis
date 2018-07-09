@@ -13,7 +13,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light">
     <a class="navbar-brand" id="navTitel" href="index.html"><img width="100" height="100"
                                                                  src="../Foto/logo/Untitled-1.png"
-                                                                 alt="logo Thomas Sport">Thomas Sport</a>
+                                                                 alt="logo Thomas Sport"><span class="hideSmall">Thomas Sport</span></a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavCalisthenics"
             aria-controls="navbarNavCalisthenics" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,64 +26,68 @@
                 <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="beach.html">beach</a>
+                <a class="nav-link" href="beach.html">Beach</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">calisthenics</a>
+                <a class="nav-link" href="#">Calisthenics</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="petanque.html">petanque</a>
+                <a class="nav-link" href="petanque.html">Petanque</a>
             </li>
         </ul>
     </div>
 </nav>
 
 <div class="container">
-    <header>
-        <h1>Calisthenics
-        </h1>
-        <hr class="mb-4">
-    </header>
+
     <div class="row">
-        <div class="col-lg-4 col-md-6">
-            <p>Lorem ipsum dolor sit ame
-                r adipisicing elit. Adipisci alias, aliquid corporis deserunt eos
-                exercitationem explicabo id molestiae nemo perspiciatis quasi ut vero voluptatibus?
-                Ducimus enim
-                expedita
-                reprehenderit sit veritatis.
+
+        <div class="col-md-6 col-sm-12 bgOpacity">
+
+            <header>
+                <h1>Calisthenics</h1>
+                <hr class="mb-4">
+            </header>
+
+            <img src="Foto/CalisthenicsEindResultaat.jpg" width="100%" height="80%" alt="">
+            <p class="textOnImage"> Calisthenics zjn oefeningen die bestaan ​​uit een verscheidenheid aan grove
+                motorische bewegingen -
+                rennen, staan, grijpen, duwen, enz. - vaak ritmisch en met minimale uitrusting, dus in wezen
+                lichaamsoefeningen.
             </p>
         </div>
-        <div class="col-lg-4 col-md-6">
-            <div class="alert alert-primary">
-                This is a primary alert
-                <button type="button" class="close" data-dismiss="alert">
-                    <span>&times;</span>
-                </button>
+
+        <div class="col-md-6 col-sm-12">
+
+            <header>
+                <h1 class="weetjes">Weetjes</h1>
+                <hr class="mb-4">
+            </header>
+
+            <div class="first sliding" width="80%">
+                <p>Urban calisthenics zijn een vorm van straattraining; calisthenics-groepen voeren oefeningsroutines
+                    uit in stedelijke gebieden. Individuen en groepen trainen om geavanceerde vaardigheden op het gebied
+                    van calisthenics, zoals muscle-ups, barspins en zowel voor- als achterhendels, te kunnen
+                    uitvoeren.</p>
             </div>
-            <div class="alert alert-danger">
-                This is a danger alert
-                <button type="button" class="close" data-dismiss="alert">
-                    <span>&times;</span>
-                </button>
+
+            <div class="second sliding hidden" width="80%">
+                <p>Sportteams en militaire eenheden voeren vaak leidergerichte groepsoefeningen uit als een vorm van
+                    gesynchroniseerde fysieke training (vaak inclusief een aangepaste "call and response" -routine) om
+                    de samenhang en discipline van de groep te vergroten. Calisthenics zijn ook populair als onderdeel
+                    van lichamelijke opvoeding in lagere en middelbare scholen over de hele wereld.</p>
             </div>
-            <div class="alert alert-success">
-                This is a success alert
-                <button type="button" class="close" data-dismiss="alert">
-                    <span>&times;</span>
-                </button>
+
+            <div class="third sliding hidden" width="80%">
+                <p>Naast algemene fitheid worden oefeningen voor gymnastiekoefeningen vaak gebruikt als basisevaluaties
+                    voor veel militaire organisaties, zoals de Physical Fitness Test van het Amerikaanse leger en de
+                    U.S.M.C. Fysieke conditietest.</p>
+            </div>
+            <div class="row">
+                <button class="btn click col-sm-12 col-lg-6 col-md-4">Next fact</button>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6">
-            <button type="button" class="btn btn-primary btn-block" data-toggle="tooltip" data-placement="top"
-                    title="Tooltip on top"><i class="fas fa-home"></i> Home
-            </button>
-            <button type="button" class="btn btn-danger btn-block"><i class="fas fa-users"></i> Users</button>
-            <button type="button" class="btn btn-outline-success btn-block" data-toggle="modal"
-                    data-target="#imageModal"><i
-                    class="fas fa-image"></i> Image modal
-            </button>
-        </div>
+
     </div>
 </div>
 
@@ -126,6 +130,34 @@
 <script src="js/bootstrap.bundle.min.js"></script>
 <!--custom scripts-->
 <script>
+    var teller = 1;
+    $(document).ready(function () {
+        $(".click").click(function () {
+            setInterval(nextSlide, 3000);
+            teller++;
+            if (teller > 3) {
+                teller = 1;
+            }
+
+        })
+    });
+
+    function nextSlide() {
+        if (teller == 1) {
+            $('.first').addClass('hidden');
+            $('.second').removeClass('hidden').addClass('slide');
+        }
+        else {
+            if (teller == 2) {
+                $('.second').addClass('hidden');
+                $('.third').removeClass('hidden').addClass('slide').delay(100);
+            }
+            else {
+                $('.third').addClass('hidden');
+                $('.first').removeClass('hidden').addClass('slide').delay(200);
+            }
+        }
+    };
 
 </script>
 
