@@ -11,8 +11,9 @@
 <body>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-md navbar-light bg-light pt-4 text-center">
-    <a class="navbar-brand" id="navTitel" href="index.html"><img width="100" height="100" src="../Foto/logo/Untitled-1.png"
-                                                                  alt="logo Thomas Sport"></a>
+    <a class="navbar-brand" id="navTitel" href="index.html"><img width="100" height="100"
+                                                                 src="../Foto/logo/Untitled-1.png"
+                                                                 alt="logo Thomas Sport"></a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,10 +52,9 @@
 
         <div class="col-md-6 col-sm-12 bgOpacity">
 
-            <header>
-                <h1>Calisthenics</h1>
-                <hr class="mb-4">
-            </header>
+
+                <h1 class="text-center pb-2 border-bottom">Calisthenics</h1>
+
 
             <img src="Foto/CalisthenicsEindResultaat.jpg" width="100%" height="80%" alt="">
             <p class="textOnImage"> Calisthenics zjn oefeningen die bestaan ​​uit een verscheidenheid aan grove
@@ -66,10 +66,9 @@
 
         <div class="col-md-6 col-sm-12">
 
-            <header>
-                <h1 class="weetjes">Weetjes</h1>
-                <hr class="mb-4">
-            </header>
+
+            <h1 class="weetjes">Weetjes</h1>
+            <hr class="mb-4">
 
             <div class="first sliding" width="80%">
                 <p>Urban calisthenics zijn een vorm van straattraining; calisthenics-groepen voeren oefeningsroutines
@@ -140,11 +139,9 @@
     var teller = 1;
     $(document).ready(function () {
         $(".click").click(function () {
-            setInterval(nextSlide, 3000);
+            setInterval(nextSlide, 30);
             teller++;
-            if (teller > 3) {
-                teller = 1;
-            }
+
 
         })
     });
@@ -152,16 +149,17 @@
     function nextSlide() {
         if (teller == 1) {
             $('.first').addClass('hidden');
-            $('.second').removeClass('hidden').addClass('slide');
+            $('.second').delay(5).removeClass('hidden').addClass('slide');
         }
         else {
             if (teller == 2) {
                 $('.second').addClass('hidden');
-                $('.third').removeClass('hidden').delay(100).addClass('slide').delay(100);
+                $('.third').delay(10).removeClass('hidden').addClass('slide').delay(10);
             }
             else {
                 $('.third').addClass('hidden');
-                $('.first').removeClass('hidden').delay(150).addClass('slide').delay(200);
+                $('.first').removeClass('hidden').delay(15).addClass('slide').delay(20);
+                teller = 0;
             }
         }
     };

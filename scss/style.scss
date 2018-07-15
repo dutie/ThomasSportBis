@@ -6,6 +6,7 @@ $footerKleur: darken(invert(black), 33%);
 $blauw: lighten(blue, 22%);
 $groen: lighten(green, 5%);
 $rood: lighten(red, 15%);
+$footerDonker: #343A40;
 
 @mixin kleur($bgKleur, $vgKleur) {
   background-color: $bgKleur;
@@ -35,7 +36,7 @@ $rood: lighten(red, 15%);
   }
 }
 
-//medium screen
+//small medium screen
 @media (min-width: 500px) {
   #navTitel {
     font-size: 55px;
@@ -63,16 +64,29 @@ $rood: lighten(red, 15%);
   .third {
     @include kleur(rgba($rood, .7), currentColor);
   }
-}
 
+
+}
+//big medium screen
+@media (min-width: 836px) and (max-width: 999px) {
+  .footerLinks{
+    border: 5px solid $footerDonker;
+    border-radius: 25px 0px 0px 0px;
+  }
+
+  .footerRechts{
+    border-radius: 0px 25px 0px 0px;
+  }
+
+}
 //big screen
 @media (min-width: 1000px) {
   .naamLogo {
     font-size: 75px;
   }
-.showLarge{
-  display: block;
-}
+  .showLarge {
+    display: block;
+  }
   .navbar-nav {
     padding-left: 36%;
   }
@@ -128,7 +142,9 @@ $rood: lighten(red, 15%);
 footer {
   bottom: 0;
   width: 100%;
+  border-radius: 0px;
 }
+
 
 #btnModal {
   color: black;
@@ -178,19 +194,22 @@ footer {
 
 //keyframes
 
-//keyframes to make title go from left to right
-@keyframes titelBewegen {
+//keyframes to make pulsating animation
+@keyframes pulsate {
   0% {
-    left: 0%;
+    transform: scale(1);
   }
   25% {
-    left: -50%;
+    transform: scale(1.5);
   }
   75% {
-    left: 50%;
+    transform: scale(0.5);
+  }
+  95% {
+    transform: scale(1.2);
   }
   100% {
-    left: 0%;
+    transform: scale(1);
   }
 }
 
@@ -258,12 +277,12 @@ footer {
 .weetjes {
   text-align: center;
   position: relative;
-  animation-name: titelBewegen;
+  animation-name: pulsate;
   animation-delay: 1.2s;
-  animation-duration: 4s;
+  animation-duration: 2800ms;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in-out;
-  animation-iteration-count: 2;
+  animation-iteration-count: 1;
 }
 
 .volleyball {
@@ -340,8 +359,6 @@ footer {
   vertical-align: middle;
   height: 500px;
 }
-
-
 
 // Link to BS4
 @import "../node_modules/bootstrap/scss/bootstrap";
