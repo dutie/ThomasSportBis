@@ -7,52 +7,127 @@ $blauw: lighten(blue, 22%);
 $groen: lighten(green, 5%);
 $rood: lighten(red, 15%);
 
+@mixin kleur($bgKleur, $vgKleur) {
+  background-color: $bgKleur;
+  color: $vgKleur;
+}
+
 //small screen
-@media (max-width: 500px) {
+@media (max-width: 499px) {
   #navTitel {
     font-size: 24px;
   }
 
   .navbar-brand {
-    position: absolute;
-    left: 50%;
-    margin-left: -50px !important; /* 50% of your logo width */
-    display: block;
+    margin-left: 37%;
   }
 
+  .showLarge {
+    display: none;
+  }
   .hideSmall {
     display: none;
+  }
+
+  footer {
+    padding-top: 5%;
+    border-radius: 2%;
   }
 }
 
 //medium screen
-@media (min-width: 501px) {
+@media (min-width: 500px) {
   #navTitel {
     font-size: 55px;
   }
 
+  #schoolLink {
+    margin: auto;
+    line-height: 70px;
+  }
+  .showLarge {
+    display: none;
+  }
   .sliding {
     width: 100%;
     height: inherit;
   }
   .first {
-    background-color: rgba($blauw, .7);
+    @include kleur(rgba($blauw, .7), currentColor);
   }
 
   .second {
-    background-color: rgba($groen, .7);
+    @include kleur(rgba($groen, .7), currentColor);
   }
 
   .third {
-    background-color: rgba($rood, .7);
+    @include kleur(rgba($rood, .7), currentColor);
   }
 }
 
 //big screen
-@media (min-width: 700px) {
+@media (min-width: 1000px) {
+  .naamLogo {
+    font-size: 75px;
+  }
+.showLarge{
+  display: block;
+}
+  .navbar-nav {
+    padding-left: 36%;
+  }
   #navTitel {
     font-size: 82px;
+
   }
+
+  #onePage1 {
+    @include kleur($footerKleur, white);
+    border-radius: 12px;
+  }
+
+  .rond {
+    border-radius: 50%;
+  }
+
+  .vierkant {
+    padding: 3%;
+
+    &.achtergrond {
+      background-color: white;
+      border-radius: 12px;
+    }
+  }
+
+  #schoolLink {
+    margin: auto;
+    line-height: 70px;
+  }
+
+  p {
+    font-size: 24px;
+  }
+
+  .kolom {
+    columns: auto;
+    font-style: italic;
+    font-variant: small-caps;
+  }
+
+  footer {
+    padding-top: 2%;
+  }
+  .navbar {
+
+  }
+  h1 {
+    font-size: 48px;
+  }
+}
+
+footer {
+  bottom: 0;
+  width: 100%;
 }
 
 #btnModal {
@@ -79,8 +154,7 @@ $rood: lighten(red, 15%);
   margin-left: 5px;
   margin-right: 20px;
   &:hover {
-    background-color: rgba(white, 0);
-    color: rgba(white, 0);
+    @include kleur(rgba(white, 0), rgba(white, 0));
   }
 
 }
@@ -207,13 +281,12 @@ $rood: lighten(red, 15%);
 }
 
 //volleyball shape
-
 .volleyball {
   height: 60px;
   width: 60px;
   border-radius: 50%;
   border: 3px dashed brown;
-  background-color: darken($blauw, 8%);
+  @include kleur(darken($blauw, 8%), currentColor);
   transform: scale(0);
 
 }
@@ -239,7 +312,7 @@ body {
 
 //footer
 footer {
-  background-color: darken(#6C757D, 15%);
+  @include kleur(darken(#6C757D, 15%), currentColor);
 }
 
 //change link from Thomas More
@@ -261,6 +334,14 @@ footer {
   color: $groen;
   list-style-type: symbols(cyclic "+");
 }
+
+.backgroundPic {
+  max-width: 100%;
+  vertical-align: middle;
+  height: 500px;
+}
+
+
 
 // Link to BS4
 @import "../node_modules/bootstrap/scss/bootstrap";

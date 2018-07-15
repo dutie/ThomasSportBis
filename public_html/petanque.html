@@ -10,111 +10,108 @@
 </head>
 <body>
 <!-- Navbar -->
-<nav class="navbar navbar-expand-md navbar-light bg-light">
-    <a class="navbar-brand" id="navTitel" href="index.html"><img width="100" height="100"
-                                                                 src="../Foto/logo/Untitled-1.png"
-                                                                 alt="logo Thomas Sport"><span class="hideSmall">Thomas Sport</span></a>
+<nav class="navbar navbar-expand-md navbar-light bg-light pt-4 text-center">
+    <a class="navbar-brand" id="navTitel" href="index.html"><img width="100" height="100" src="../Foto/logo/Untitled-1.png"
+                                                                  alt="logo Thomas Sport"></a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavPetanque"
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarNavPetanque">
-        <ul class="navbar-nav">
-            <li class="nav-item ">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="beach.html">Beach</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="calisthenics.html">Calisthenics</a>
-            </li>
-            <li class="nav-item  active">
-                <a class="nav-link" href="#">Petanque </a>
-            </li>
-        </ul>
+
+    <div class="collapse navbar-collapse m-auto row" id="navbarNav">
+
+        <div class="hideSmall col-lg-11">
+            <p class="naamLogo">Thomas Sport</p>
+        </div>
+
+        <div class="text-center col-lg-12">
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="beach.html">Beach</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="calisthenics.html">Calisthenics</a>
+                </li>
+                <li class="nav-item  active">
+                    <a class="nav-link" href="#">Petanque </a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
 
-<div class="container">
-    <header>
-        <h1>Petanque
+<div class="container-fluid bg-dark">
+    <header class="text-center">
+        <figure class="pb-0 mb-0">
+            <img src="Foto/petanque_Picto.png" alt="Pictogram van een petanque speler" width="100">
+        </figure>
+        <h1 class="h1 text-white pb-2">
+            Petanque
         </h1>
-        <hr class="mb-4">
     </header>
-    <div class="row">
-        <div class="col-lg-4 col-md-6">
-            <p>Lorem ipsum dolor sit ame
-                r adipisicing elit. Adipisci alias, aliquid corporis deserunt eos
-                exercitationem explicabo id molestiae nemo perspiciatis quasi ut vero voluptatibus?
-                Ducimus enim
-                expedita
-                reprehenderit sit veritatis.
-            </p>
-        </div>
-        <div class="col-lg-4 col-md-6">
-            <div class="alert alert-primary">
-                This is a primary alert
-                <button type="button" class="close" data-dismiss="alert">
-                    <span>&times;</span>
-                </button>
-            </div>
-            <div class="alert alert-danger">
-                This is a danger alert
-                <button type="button" class="close" data-dismiss="alert">
-                    <span>&times;</span>
-                </button>
-            </div>
-            <div class="alert alert-success">
-                This is a success alert
-                <button type="button" class="close" data-dismiss="alert">
-                    <span>&times;</span>
-                </button>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-            <button type="button" class="btn btn-primary btn-block" data-toggle="tooltip" data-placement="top"
-                    title="Tooltip on top"><i class="fas fa-home"></i> Home
-            </button>
-            <button type="button" class="btn btn-danger btn-block"><i class="fas fa-users"></i> Users</button>
-            <button type="button" class="btn btn-outline-success btn-block" data-toggle="modal"
-                    data-target="#imageModal"><i
-                    class="fas fa-image"></i> Image modal
-            </button>
-        </div>
-    </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="imageModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Random image</h5>
-            </div>
-            <div class="modal-body">
-                <img src="https://placeimg.com/600/337/nature" class="img-fluid" alt="Random image">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
+<!-- Content -->
+<div class="row">
+    <div class="col-12">
+        <h3 class="text-center">Het Petanqueveld van Thomas More</h3>
+    </div>
+    <figure class="col-sm-12 col-md-6 col-lg-4 text-center">
+        <img src="Foto/ideePetanque.jpg" alt="Plan voor petanquevelden" width="100%">
+        <h2 class="textOnImage">Idee voor het petanqueveld </h2>
+    </figure>
+
+    <figure class="col-sm-12 col-md-6 col-lg-4 text-center">
+        <img src="Foto/petanqueInDeMaak.jpg" alt="Werken aan de petanquevelden" width="100%">
+        <h2 class="textOnImage">Tijdens de werken voor het veld </h2>
+    </figure>
+
+    <figure class="col-sm-12 col-md-6 col-lg-4 text-center">
+        <img src="Foto/petanqueKlaar.jpg" alt="Afgewerkte petanquevelden" width="100%">
+        <h2 class="textOnImage">Het prachtige eindresultaat </h2>
+    </figure>
+
+    <div class="col-sm-12 col-md-6 col-lg-12 text-center ">
+        <div class="kolom">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium aliquam aut corporis deleniti
+                dignissimos dolor doloribus dolorum excepturi illo ipsam laudantium, pariatur perferendis quaerat quia
+                ratione suscipit ullam voluptatibus.</p>
+            <p>Amet aperiam ea eveniet, ipsum iusto neque perspiciatis quam quia sit totam. Aperiam asperiores impedit
+                incidunt quo vel veritatis! Amet aspernatur aut doloremque placeat quaerat quia, sequi totam veniam
+                vitae?</p>
+            <p>Ab delectus dolore eaque error, eum, inventore laborum molestiae nemo nisi, nobis praesentium quis
+                sapiente? Adipisci doloribus exercitationem facere magni minus nostrum, suscipit veritatis. Corporis
+                eligendi magnam modi quas rerum.</p>
+            <p>Ab accusantium autem blanditiis culpa dignissimos dolore harum id, iste iure nihil optio quo reiciendis
+                rerum sapiente sed sint voluptatibus. Ab cupiditate explicabo odit? Consequuntur eius error id illo
+                ratione?</p>
+            <p>Accusantium adipisci aliquid ducimus in incidunt, necessitatibus nesciunt pariatur quam repellat!
+                Accusantium at aut autem consectetur consequuntur eos esse eum maxime natus nulla, quaerat quas qui quo
+                quod sunt ut?</p>
+
         </div>
     </div>
+
+
 </div>
 
 <!-- Footer -->
-<footer class="page-footer font-small blue pt-4 mt-4 pb-0 mb-0">
+<footer class="mt-4">
 
-    <div class="container-fluid text-center text-md-left">
+    <div class="container-fluid text-center text-md-left bg-white">
         <div class="row">
-            <div class="col-sm-12 col-md-6 text-center">
+
+            <div class="col-sm-12 col-md-6 col-lg-12 text-center">
                 <h5 class="text-uppercase">Examen opdracht</h5>
                 <p>&copy Mats Fockaert</p>
             </div>
 
-            <div class="col-sm-12 col-md-6 text-center">
+            <div class="col-sm-12 col-md-6 col-lg-12 text-center bg-dark">
                 <a href="https://www.thomasmore.be" id="schoolLink">Thomas More</a>
             </div>
         </div>
