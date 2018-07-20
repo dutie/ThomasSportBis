@@ -24,7 +24,7 @@
     <div class="collapse navbar-collapse m-auto row" id="navbarNav">
 
         <div class="hideSmall col-lg-11">
-            <p class="naamLogo">Thomas Sport</p>
+            <h1 class="naamLogo">Thomas Sport</h1>
         </div>
 
         <div class="text-center col-lg-12">
@@ -46,15 +46,15 @@
     </div>
 </nav>
 
-<div class="container">
+<!-- calisthenics content -->
+<article>
 
     <div class="row">
 
-        <div class="col-md-6 col-sm-12 bgOpacity">
+        <section class="col-md-6 col-sm-12 bgOpacity">
 
 
-                <h1 class="text-center pb-2 border-bottom">Calisthenics</h1>
-
+            <h1 class="text-center pb-2 border-bottom">Calisthenics</h1>
 
             <img src="Foto/CalisthenicsEindResultaat.jpg" width="100%" height="80%" alt="">
             <p class="textOnImage"> Calisthenics zjn oefeningen die bestaan ​​uit een verscheidenheid aan grove
@@ -62,57 +62,43 @@
                 rennen, staan, grijpen, duwen, enz. - vaak ritmisch en met minimale uitrusting, dus in wezen
                 lichaamsoefeningen.
             </p>
-        </div>
+        </section>
+        <section class="col-md-6 col-sm-12">
 
-        <div class="col-md-6 col-sm-12">
 
+            <h1 class="weetjes pb-2 border-bottom">Weetjes</h1>
+            <div class="sliding">
+                <div class="first" width="80%">
+                    <p>Urban calisthenics zijn een vorm van straattraining; calisthenics-groepen voeren
+                        oefeningsroutines
+                        uit in stedelijke gebieden. Individuen en groepen trainen om geavanceerde vaardigheden op het
+                        gebied
+                        van calisthenics, zoals muscle-ups, barspins en zowel voor- als achterhendels, te kunnen
+                        uitvoeren.</p>
+                </div>
 
-            <h1 class="weetjes">Weetjes</h1>
-            <hr class="mb-4">
+                <div class="second hidden" width="80%">
+                    <p>Sportteams en militaire eenheden voeren vaak leidergerichte groepsoefeningen uit als een vorm van
+                        gesynchroniseerde fysieke training (vaak inclusief een aangepaste "call and response" -routine)
+                        om
+                        de samenhang en discipline van de groep te vergroten. Calisthenics zijn ook populair als
+                        onderdeel
+                        van lichamelijke opvoeding in lagere en middelbare scholen over de hele wereld.</p>
+                </div>
 
-            <div class="first sliding" width="80%">
-                <p>Urban calisthenics zijn een vorm van straattraining; calisthenics-groepen voeren oefeningsroutines
-                    uit in stedelijke gebieden. Individuen en groepen trainen om geavanceerde vaardigheden op het gebied
-                    van calisthenics, zoals muscle-ups, barspins en zowel voor- als achterhendels, te kunnen
-                    uitvoeren.</p>
+                <div class="third hidden" width="80%">
+                    <p>Naast algemene fitheid worden oefeningen voor gymnastiekoefeningen vaak gebruikt als
+                        basisevaluaties
+                        voor veel militaire organisaties, zoals de Physical Fitness Test van het Amerikaanse leger en de
+                        U.S.M.C. Fysieke conditietest.</p>
+                </div>
+                <div class="text-center">
+                    <button class="btn click">Next fact</button>
+                </div>
             </div>
-
-            <div class="second sliding hidden" width="80%">
-                <p>Sportteams en militaire eenheden voeren vaak leidergerichte groepsoefeningen uit als een vorm van
-                    gesynchroniseerde fysieke training (vaak inclusief een aangepaste "call and response" -routine) om
-                    de samenhang en discipline van de groep te vergroten. Calisthenics zijn ook populair als onderdeel
-                    van lichamelijke opvoeding in lagere en middelbare scholen over de hele wereld.</p>
-            </div>
-
-            <div class="third sliding hidden" width="80%">
-                <p>Naast algemene fitheid worden oefeningen voor gymnastiekoefeningen vaak gebruikt als basisevaluaties
-                    voor veel militaire organisaties, zoals de Physical Fitness Test van het Amerikaanse leger en de
-                    U.S.M.C. Fysieke conditietest.</p>
-            </div>
-            <div class="row">
-                <button class="btn click col-sm-12 col-lg-6 col-md-4">Next fact</button>
-            </div>
-        </div>
-
+        </section>
     </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="imageModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Random image</h5>
-            </div>
-            <div class="modal-body">
-                <img src="https://placeimg.com/600/337/nature" class="img-fluid" alt="Random image">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
+</article>
 
 <!-- Footer -->
 <footer class="page-footer font-small blue pt-4 mt-4 pb-0 mb-0">
@@ -141,15 +127,13 @@
         $(".click").click(function () {
             setInterval(nextSlide, 30);
             teller++;
-
-
         })
     });
 
     function nextSlide() {
         if (teller == 1) {
             $('.first').addClass('hidden');
-            $('.second').delay(5).removeClass('hidden').addClass('slide');
+            $('.second').removeClass('hidden').addClass('slide');
         }
         else {
             if (teller == 2) {

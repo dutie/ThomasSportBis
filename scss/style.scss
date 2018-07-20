@@ -15,6 +15,14 @@ $footerDonker: #343A40;
 
 //small screen
 @media (max-width: 499px) {
+
+  .sliding {
+    width: 100%;
+    vertical-align: center;
+    padding: 20px;
+    border-radius: 25px;
+  }
+
   #navTitel {
     font-size: 24px;
   }
@@ -38,6 +46,7 @@ $footerDonker: #343A40;
 
 //small medium screen
 @media (min-width: 500px) {
+
   #navTitel {
     font-size: 55px;
   }
@@ -49,38 +58,39 @@ $footerDonker: #343A40;
   .showLarge {
     display: none;
   }
-  .sliding {
-    width: 100%;
-    height: inherit;
-  }
-  .first {
-    @include kleur(rgba($blauw, .7), currentColor);
-  }
-
-  .second {
-    @include kleur(rgba($groen, .7), currentColor);
-  }
-
-  .third {
-    @include kleur(rgba($rood, .7), currentColor);
-  }
-
 
 }
+
 //big medium screen
 @media (min-width: 836px) and (max-width: 999px) {
-  .footerLinks{
+
+  .footerLinks {
     border: 5px solid $footerDonker;
     border-radius: 25px 0px 0px 0px;
   }
 
-  .footerRechts{
+  .footerRechts {
     border-radius: 0px 25px 0px 0px;
   }
 
 }
+
 //big screen
 @media (min-width: 1000px) {
+
+  .sliding {
+    width: 100%;
+    vertical-align: center;
+    padding: 4px;
+    @include kleur($footerDonker, lighten(#ccc, 20));
+    padding-bottom: 50%;
+    text-align: center;
+    border-radius: 25px;
+    p {
+      margin-top: 50%;
+    }
+  }
+
   .naamLogo {
     font-size: 75px;
   }
@@ -119,13 +129,12 @@ $footerDonker: #343A40;
   }
 
   p {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .kolom {
     columns: auto;
     font-style: italic;
-    font-variant: small-caps;
   }
 
   footer {
@@ -144,7 +153,6 @@ footer {
   width: 100%;
   border-radius: 0px;
 }
-
 
 #btnModal {
   color: black;
@@ -358,6 +366,18 @@ footer {
   max-width: 100%;
   vertical-align: middle;
   height: 500px;
+}
+
+//fonts
+@import url('https://fonts.googleapis.com/css?family=Alegreya');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+* {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1 {
+  font-family: 'Alegreya', serif !important;
 }
 
 // Link to BS4
