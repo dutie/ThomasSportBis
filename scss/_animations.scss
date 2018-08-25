@@ -1,0 +1,102 @@
+//keyframes to make pulsating animation
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.5);
+  }
+  75% {
+    transform: scale(0.5);
+  }
+  95% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+//keyframes to animate from left to right
+@keyframes leftToRight {
+  0% {
+    left: -1500px;
+  }
+  97% {
+    left: 10px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
+//keyframes to animate a volleyball
+@keyframes volleyball {
+  0% {
+    transform: translateX(-200px) translateY(-20px) scale(1);
+  }
+  5% {
+    transform: translateY(-20px) translateX(-100px);
+  }
+  6% {
+    transform: translateY(-50px) translateX(-50px);
+  }
+  7% {
+    transform: translateY(-80px) translateX(-0px);
+  }
+  8% {
+    transform: translateY(-110px) translateX(50px) scale(0.9);
+  }
+  9% {
+    transform: translateY(-140px) translateX(100px) scale(0.8);
+  }
+  10% {
+    transform: translateY(-170px) translateX(150px) scale(0.7);
+  }
+  11% {
+    transform: translateY(-200px) translateX(175px) scale(0.6);
+  }
+  17% {
+    transform: translateY(-260px) translateX(200px) scale(0.5);
+  }
+  19% {
+    transform: scale(0.0);
+  }
+
+  100% {
+    transform: translateX(4000px) translateY(-4000px);
+
+  }
+
+}
+
+//add the animation
+//left to right
+.leftToRight {
+  position: relative;
+  animation-name: leftToRight;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+//weetjes
+.weetjes {
+  text-align: center;
+  position: relative;
+  animation-name: pulsate;
+  animation-delay: 1.2s;
+  animation-duration: 2800ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+
+//volleyball
+.volleyball {
+  animation-name: volleyball;
+  animation-delay: 1.4s;
+  animation-duration: 4s;
+  animation-play-state: running;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}

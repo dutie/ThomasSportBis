@@ -1,0 +1,83 @@
+
+//big screen
+@media (min-width: 1000px) {
+
+  .sliding {
+    @include grootte(100%, auto);
+    vertical-align: center;
+    padding: 4px;
+    @include kleur($footerDonker, lighten(#ccc, 20));
+    padding-bottom: 50%;
+    text-align: center;
+    border-radius: 25px;
+    p {
+      margin-top: 50%;
+    }
+  }
+
+  .naamLogo {
+    font-size: 75px;
+  }
+  .showLarge {
+    display: block;
+  }
+  .navbar-nav {
+    padding-left: 36%;
+  }
+  #navTitel {
+    font-size: 82px;
+
+  }
+
+  #onePage1 {
+    @include kleur($footerKleur, white);
+    border-radius: 12px;
+  }
+
+  #onePage4 {
+    @include kleur($footerKleur, white);
+  }
+
+  .rond {
+    border-radius: 50%;
+  }
+
+  .vierkant {
+    padding: 3%;
+
+    &.achtergrond {
+      background-color: white;
+      border-radius: 12px;
+    }
+  }
+
+  #schoolLink {
+    margin: auto;
+    line-height: 70px;
+  }
+
+  p {
+    font-size: 22px;
+  }
+
+  .kolomGroot {
+    columns: 100px 3;
+    column-gap: 50px;
+    column-rule: 5px dotted $containerKleur;
+  }
+
+  .kolom {
+    columns: auto;
+    font-style: italic;
+  }
+
+  footer {
+    padding-top: 2%;
+  }
+  .navbar {
+
+  }
+  h1 {
+    font-size: 48px;
+  }
+}

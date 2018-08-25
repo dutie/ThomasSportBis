@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="../Foto/logo/Untitled-1.png" type="image/png"/>
+    <link rel="icon" href="Foto/logo/Untitled-1.png" type="image/png"/>
     <title>Thomas Sport</title>
 </head>
 <body>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-md navbar-light bg-light pt-4 text-center">
     <a class="navbar-brand" id="navTitel" href="index.html"><img width="100" height="100"
-                                                                 src="../Foto/logo/Untitled-1.png"
+                                                                 src="Foto/logo/Untitled-1.png"
                                                                  alt="logo Thomas Sport"></a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -77,9 +77,9 @@
             <section class="col-sm-12 col-md-6 col-lg-8">
                 <h1>spelregels</h1>
                 <div class="row">
-                    <ul class="col-sm-12 col-lg-5 goed">
+                    <ul class="col-sm-12 col-lg-5 goed lijstGoed">
                         <h3>Beachvolleybal</h3>
-                        <li>Er zijn geen vaste posities voor spelers in het veld</li>
+                        <li>Er zijn geen vaste posities voor spelers in het veld.</li>
                         <li> De bal is zwaarder en zachter.</li>
                         <li>Het veld meet 8 bij 16 meter.</li>
                         <li> Er is geen middenlijn; er kan dus ook geen lijnfout worden gemaakt door het overschrijden
@@ -89,17 +89,25 @@
                         <li>Belijning wordt gemaakt door het spannen van linten; een bal is 'in' als de bal de lijn
                             raakt.
                         </li>
+
+
                     </ul>
 
-                    <ul class="col-sm-12 col-lg-5 fout">
+                    <p class="goed">Weet jij nog een verschil? <input type="text" id="inputGoed" name="meer">
+                        <input type="submit" value="vul aan" id="vulAanGoed"></p>
+
+
+                    <ul class="col-sm-12 col-lg-5 fout lijstFout">
                         <h3>Zaalvolleybal</h3>
-                        <li>Er zijn vaste posities voor alle spelers in het veld</li>
+                        <li>Er zijn vaste posities voor alle spelers in het veld.</li>
                         <li> De bal kan hard aankomenen wegens het harde omhulsel.</li>
                         <li>Het veld is groter dan bij <span class="font-italic">beachvolleybalveld</span>; 9 bij 18
                             meter.
                         </li>
                         <li>Over of op de getapte of geverfde lijn is buiten.</li>
                     </ul>
+                    <p class="fout">Weet jij nog een verschil? <input type="text" id="inputFout" name="meer">
+                        <input type="submit" value="vul aan" id="vulAanFout"></p>
                 </div>
             </section>
             <!-- Button to show field -->
@@ -151,7 +159,59 @@
 <script src="js/bootstrap.bundle.min.js"></script>
 <!--custom scripts-->
 <script>
+    $(document).ready(function () {
+        var geheugen = [];
+        var dood = false;
 
+        $("#vulAanGoed").click(function toevoegingVerschilGoed() {
+            var toevoeging = document.getElementById('inputGoed'),
+                toevoegingZin = toevoeging.value;
+
+            for (var i = 0; i < geheugen.length; i++) {
+                if (toevoegingZin === geheugen[i]) {
+                    alert("Toevoeging staat al in de lijst!");
+                    dood = true;
+                }
+            }
+            if (toevoegingZin === "" || dood) {
+                alert("Vul iets in aub!");
+                dood = false;
+            } else {
+                $('.lijstGoed').append('<li>' + toevoegingZin + '</li>');
+                geheugen.push(toevoegingZin);
+
+                $(".lijstGoed li").last().css({color: "#C0C0C0"});
+                dood = false;
+            }
+
+        });
+
+        $("#vulAanFout").click(function toevoegingVerschilFout() {
+            var toevoeging = document.getElementById('inputFout'),
+                toevoegingZin = toevoeging.value;
+
+            for (var i = 0; i < geheugen.length; i++) {
+                if (toevoegingZin === geheugen[i]) {
+                    alert("Toevoeging staat al in de lijst!");
+                    dood = true;
+                }
+            }
+
+            if (toevoegingZin === "" || dood) {
+                alert("Vul iets in aub!")
+                dood = false;
+            } else {
+                $('.lijstFout').append('<li>' + toevoegingZin + '</li>');
+                geheugen.push(toevoegingZin);
+
+                $(".lijstFout li").last().css({color: "#C0C0C0"});
+                dood = false;
+            }
+
+        });
+
+
+    });
 </script>
 
 </body>

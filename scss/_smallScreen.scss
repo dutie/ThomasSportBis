@@ -1,0 +1,39 @@
+
+
+
+//small screen
+@media (max-width: 499px) {
+
+  .sliding {
+    width: 100%;
+    vertical-align: center;
+    padding: 20px;
+    border-radius: 25px;
+  }
+
+  #navTitel {
+    font-size: 24px;
+  }
+
+  .navbar-brand {
+    margin-left: 37%;
+  }
+
+  .showLarge {
+    display: none;
+  }
+  .hideSmall {
+    display: none;
+  }
+
+  footer {
+    padding-top: 5%;
+    border-radius: 2%;
+  }
+
+  .backgroundPic {
+    max-width: 100%;
+    vertical-align: middle;
+    @include grootte(90%, 300px);
+  }
+}

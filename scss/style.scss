@@ -1,159 +1,39 @@
-// Override Bs4 variables and custom mixins
+//fonts
+@import "fonts";
+//mixins, variables
+@import "variablesNMore";
+//screen sizes
+@import "smallScreen";
+@import "mediumScreen";
+@import "bigScreen";
+//keyframes and animations
+@import "animations";
 
-$containerKleur: invert(darken(#6C757D, 25%));
-$h1Kleur: lighten(black, 25%);
-$footerKleur: darken(invert(black), 33%);
-$blauw: lighten(blue, 22%);
-$groen: lighten(green, 5%);
-$rood: lighten(red, 15%);
-$footerDonker: #343A40;
-
-@mixin kleur($bgKleur, $vgKleur) {
-  background-color: $bgKleur;
-  color: $vgKleur;
-}
-
-//small screen
-@media (max-width: 499px) {
-
-  .sliding {
-    width: 100%;
-    vertical-align: center;
-    padding: 20px;
-    border-radius: 25px;
-  }
-
-  #navTitel {
-    font-size: 24px;
-  }
-
-  .navbar-brand {
-    margin-left: 37%;
-  }
-
-  .showLarge {
-    display: none;
-  }
-  .hideSmall {
-    display: none;
-  }
-
-  footer {
-    padding-top: 5%;
-    border-radius: 2%;
-  }
-}
-
-//small medium screen
-@media (min-width: 500px) {
-
-  #navTitel {
-    font-size: 55px;
-  }
-
-  #schoolLink {
-    margin: auto;
-    line-height: 70px;
-  }
-  .showLarge {
-    display: none;
-  }
-
-}
-
-//big medium screen
-@media (min-width: 836px) and (max-width: 999px) {
-
-  .footerLinks {
-    border: 5px solid $footerDonker;
-    border-radius: 25px 0px 0px 0px;
-  }
-
-  .footerRechts {
-    border-radius: 0px 25px 0px 0px;
-  }
-
-}
-
-//big screen
-@media (min-width: 1000px) {
-
-  .sliding {
-    width: 100%;
-    vertical-align: center;
-    padding: 4px;
-    @include kleur($footerDonker, lighten(#ccc, 20));
-    padding-bottom: 50%;
-    text-align: center;
-    border-radius: 25px;
-    p {
-      margin-top: 50%;
-    }
-  }
-
-  .naamLogo {
-    font-size: 75px;
-  }
-  .showLarge {
-    display: block;
-  }
-  .navbar-nav {
-    padding-left: 36%;
-  }
-  #navTitel {
-    font-size: 82px;
-
-  }
-
-  #onePage1 {
-    @include kleur($footerKleur, white);
-    border-radius: 12px;
-  }
-
-  .rond {
-    border-radius: 50%;
-  }
-
-  .vierkant {
-    padding: 3%;
-
-    &.achtergrond {
-      background-color: white;
-      border-radius: 12px;
-    }
-  }
-
-  #schoolLink {
-    margin: auto;
-    line-height: 70px;
-  }
-
-  p {
-    font-size: 22px;
-  }
-
-  .kolom {
-    columns: auto;
-    font-style: italic;
-  }
-
-  footer {
-    padding-top: 2%;
-  }
-  .navbar {
-
-  }
+//kleuren geven
+body {
   h1 {
-    font-size: 48px;
+    color: $h1Kleur;
+  }
+  footer {
+    h5 {
+      color: $footerKleur;
+    }
   }
 }
 
+//footer
 footer {
   bottom: 0;
-  width: 100%;
+  @include grootte(100%, auto);
   border-radius: 0px;
+  @include kleur(darken(#6C757D, 15%), currentColor);
+
+  p {
+    font-size: 25px;
+  }
 }
 
+//button
 #btnModal {
   color: black;
   &:hover {
@@ -170,6 +50,15 @@ footer {
 
 }
 
+.textOnImageNoHide {
+  position: absolute;
+  top: 52%;
+  font-weight: bold;
+  background-color: rgba(white, .6);
+  margin-left: 5px;
+  margin-right: 20px;
+}
+
 .textOnImage {
   position: absolute;
   top: 52%;
@@ -183,134 +72,45 @@ footer {
 
 }
 
-//fout and goed padding and margin
+//fout and goed
+  //padding and margin
 .fout, .goed {
   padding: 12px;
   margin: auto;
   margin: 10px;
 }
 
-//klasse om iets te verbergen
+  //color and list
+.fout {
+  color: $rood;
+  list-style-type: symbols(cyclic "-");
+}
+
+.goed {
+  color: $groen;
+  list-style-type: symbols(cyclic "+");
+}
+
+//hide and show
+  //klasse om iets te verbergen
 .hide {
   display: none;
 }
-
-//klasse om iets weer te geven
+    //hidden objects
+.hidden {
+  display: none;
+}
+  //klasse om iets weer te geven
 .show {
   display: block;
 }
 
-//keyframes
 
-//keyframes to make pulsating animation
-@keyframes pulsate {
-  0% {
-    transform: scale(1);
-  }
-  25% {
-    transform: scale(1.5);
-  }
-  75% {
-    transform: scale(0.5);
-  }
-  95% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 
-//keyframes to animate from left to right
-@keyframes leftToRight {
-  0% {
-    left: -1500px;
-  }
-  97% {
-    left: 10px;
-  }
-  100% {
-    left: 0px;
-  }
-}
-
-//keyframes to animate a volleyball
-@keyframes volleyball {
-  0% {
-    transform: translateX(-200px) translateY(-20px) scale(1);
-  }
-  5% {
-    transform: translateY(-20px) translateX(-100px);
-  }
-  6% {
-    transform: translateY(-50px) translateX(-50px);
-  }
-  7% {
-    transform: translateY(-80px) translateX(-0px);
-  }
-  8% {
-    transform: translateY(-110px) translateX(50px) scale(0.9);
-  }
-  9% {
-    transform: translateY(-140px) translateX(100px) scale(0.8);
-  }
-  10% {
-    transform: translateY(-170px) translateX(150px) scale(0.7);
-  }
-  11% {
-    transform: translateY(-200px) translateX(175px) scale(0.6);
-  }
-  17% {
-    transform: translateY(-260px) translateX(200px) scale(0.5);
-  }
-  19% {
-    transform: scale(0.0);
-  }
-
-  100% {
-    transform: translateX(4000px) translateY(-4000px);
-
-  }
-
-}
-
-//add the animation
-.leftToRight {
-  position: relative;
-  animation-name: leftToRight;
-  animation-duration: 3s;
-  animation-fill-mode: forwards;
-}
-
-.weetjes {
-  text-align: center;
-  position: relative;
-  animation-name: pulsate;
-  animation-delay: 1.2s;
-  animation-duration: 2800ms;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: 1;
-}
-
-.volleyball {
-  animation-name: volleyball;
-  animation-delay: 1.4s;
-  animation-duration: 4s;
-  animation-play-state: running;
-  animation-fill-mode: forwards;
-  animation-timing-function: linear;
-}
-
-//hidden objects
-.hidden {
-  display: none;
-}
 
 //volleyball shape
 .volleyball {
-  height: 60px;
-  width: 60px;
+  @include grootte(60px, 60px);
   border-radius: 50%;
   border: 3px dashed brown;
   @include kleur(darken($blauw, 8%), currentColor);
@@ -318,17 +118,7 @@ footer {
 
 }
 
-//kleuren geven
-body {
-  h1 {
-    color: $h1Kleur;
-  }
-  footer {
-    h5 {
-      color: $footerKleur;
-    }
-  }
-}
+
 
 //divide in columns
 .kolom {
@@ -337,10 +127,10 @@ body {
   column-rule: 5px dotted $containerKleur;
 }
 
-//footer
-footer {
-  @include kleur(darken(#6C757D, 15%), currentColor);
+.kolomGroot {
+  font-style: italic;
 }
+
 
 //change link from Thomas More
 #schoolLink {
@@ -352,32 +142,10 @@ footer {
   }
 }
 
-.fout {
-  color: $rood;
-  list-style-type: symbols(cyclic "-");
-}
-
-.goed {
-  color: $groen;
-  list-style-type: symbols(cyclic "+");
-}
-
 .backgroundPic {
   max-width: 100%;
   vertical-align: middle;
-  height: 500px;
-}
-
-//fonts
-@import url('https://fonts.googleapis.com/css?family=Alegreya');
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
-
-* {
-  font-family: 'Source Sans Pro', sans-serif;
-}
-
-h1 {
-  font-family: 'Alegreya', serif !important;
+  @include grootte(90%, 500px);
 }
 
 // Link to BS4

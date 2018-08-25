@@ -1,0 +1,19 @@
+// Override Bs4 variables and custom mixins
+
+$containerKleur: invert(darken(#6C757D, 25%));
+$h1Kleur: lighten(black, 25%);
+$footerKleur: darken(invert(black), 55%);
+$blauw: lighten(blue, 22%);
+$groen: lighten(green, 5%);
+$rood: lighten(red, 15%);
+$footerDonker: #343A40;
+
+@mixin kleur($bgKleur, $vgKleur) {
+  background-color: $bgKleur;
+  color: $vgKleur;
+}
+
+@mixin grootte($width, $height) {
+  width: $width;
+  height: $height;
+}

@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="../Foto/logo/Untitled-1.png" type="image/x-icon"/>
+    <link rel="icon" href="Foto/logo/Untitled-1.png" type="image/x-icon"/>
     <title>Thomas Sport</title>
 </head>
 <body>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-md navbar-light bg-light pt-4 text-center">
     <a class="navbar-brand" id="navTitel" href="index.html"><img width="100" height="100"
-                                                                 src="../Foto/logo/Untitled-1.png"
+                                                                 src="Foto/logo/Untitled-1.png"
                                                                  alt="logo Thomas Sport"></a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -57,7 +57,7 @@
             <h1 class="text-center pb-2 border-bottom">Calisthenics</h1>
 
             <img src="Foto/CalisthenicsEindResultaat.jpg" width="100%" height="80%" alt="">
-            <p class="textOnImage"> Calisthenics zjn oefeningen die bestaan ​​uit een verscheidenheid aan grove
+            <p class="textOnImageNoHide"> Calisthenics zjn oefeningen die bestaan ​​uit een verscheidenheid aan grove
                 motorische bewegingen -
                 rennen, staan, grijpen, duwen, enz. - vaak ritmisch en met minimale uitrusting, dus in wezen
                 lichaamsoefeningen.
@@ -122,7 +122,7 @@
 <script src="js/bootstrap.bundle.min.js"></script>
 <!--custom scripts-->
 <script>
-    var teller = 1;
+    var teller = 0;
     $(document).ready(function () {
         $(".click").click(function () {
             setInterval(nextSlide, 30);
@@ -133,7 +133,7 @@
     function nextSlide() {
         if (teller == 1) {
             $('.first').addClass('hidden');
-            $('.second').removeClass('hidden').addClass('slide');
+            $('.second').delay(10).removeClass('hidden').addClass('slide');
         }
         else {
             if (teller == 2) {

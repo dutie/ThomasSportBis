@@ -1,0 +1,31 @@
+
+//small medium screen
+@media (min-width: 500px) {
+
+  #navTitel {
+    font-size: 55px;
+  }
+
+  #schoolLink {
+    margin: auto;
+    line-height: 70px;
+  }
+  .showLarge {
+    display: none;
+  }
+
+}
+
+//big medium screen
+@media (min-width: 836px) and (max-width: 999px) {
+
+  .footerLinks {
+    border: 5px solid $footerDonker;
+    border-radius: 25px 0px 0px 0px;
+  }
+
+  .footerRechts {
+    border-radius: 0px 25px 0px 0px;
+  }
+
+}
